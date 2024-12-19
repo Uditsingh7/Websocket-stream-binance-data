@@ -9,11 +9,42 @@
 
 <body>
     <h1>Real-Time Order Book</h1>
-    <input type="text" id="pair" placeholder="Enter pair (e.g., btcusdt)" />
-    <button onclick="subscribe()">Subscribe</button>
+    <div id="price-header" class="scrolling-header"> 
+        <!-- Prices will be dynamically injected here -->
+    </div>
+    <div id="price"></div>
+    <input type="text" id="pair" placeholder="Enter pair (e.g., btcusdt)" /> 
+    <button onclick="subscribeToPair()">Subscribe</button>
     <button onclick="unsubscribe()">Unsubscribe</button>
+
     <div id="output"></div>
     <script src="script.js"></script>
+    <style>
+        .scrolling-header {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            background: #222;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            animation: scroll 15s linear infinite;
+        }
+
+        .scrolling-header div {
+            margin: 0 15px;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
 </body>
 
 </html>
