@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://3.87.89.155:8080');
+const ws = new WebSocket('ws://localhost:8080');
 let currentPair = '';
 
 // WebSocket Connection Open
